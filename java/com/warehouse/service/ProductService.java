@@ -1,0 +1,20 @@
+package com.warehouse.service;
+
+import com.warehouse.dto.request.ProductRequest;
+import com.warehouse.dto.response.ProductResponse;
+import org.springframework.data.domain.Page;
+
+public interface ProductService {
+
+    ProductResponse createProduct(ProductRequest request);
+
+    ProductResponse updateProduct(Long id,
+                                  ProductRequest request);
+
+    ProductResponse getProduct(Long id);
+
+    Page<ProductResponse> getAllProducts(
+            int page,
+            int size,
+            String sortBy);
+}
